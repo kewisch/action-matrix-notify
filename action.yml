@@ -1,0 +1,25 @@
+---
+name: Matrix Notify
+inputs:
+  matrixHomeserver:
+    description: The homeserver to notify on
+    default: matrix.org
+  matrixRoomId:
+    description: The room to notify in
+    required: true
+  matrixToken:
+    description: The token of the account to notify on
+    required: true
+  message:
+    description: The message to send
+    required: true
+  replaceUserMap:
+    description: Replace github actors by matrix ids. Pass a string containing a JSON object mapping.
+
+outputs:
+  matrixEventId:
+    description: The id of the matrix event
+
+runs:
+  using: node20
+  main: dist/index.js

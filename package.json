@@ -1,0 +1,20 @@
+{
+  "name": "action-matrix-notify",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Notify about build status in a Matrix channel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build index.js -o dist"
+  },
+  "author": "Philipp Kewisch <mozilla@kewis.ch>",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "showdown": "^2.1.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.2"
+  }
+}

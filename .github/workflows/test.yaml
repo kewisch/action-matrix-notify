@@ -1,0 +1,21 @@
+---
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./
+        with:
+          matrixHomeserver: "mozilla.modular.im"
+          matrixRoomId: ${{ secrets.MATRIX_ROOM_ID }}
+          matrixToken: ${{ secrets.MATRIX_TOKEN }}
+          message: >-
+            🟢 [test build ${{ github.run_number}}](${{ github.server_url }}/${{ github.repository }}/actions/run/${{ github.run_id }})
+            has succeeded
